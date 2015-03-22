@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Okatapong</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" href="./css/style.css"> 
+		<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+		<script src="./js/createjs/easeljs-NEXT.combined.js"></script>
+		<script src="./js/oktapong.init.js"></script>
+		<script src="./js/oktapong.ui.js"></script>
+		<script src="./js/oktapong.menu.js"></script>
+		
+		<script src="./js/oktapong.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="stripes"></div>
+			<div id="menu" style="display: none;">	
+				<h1><span class="okta"></span>ktapong</h1>
+				<ul>
+					<li class="selected">1 Player</li>
+					<li>2 Player</li>
+					<li>3 Player</li>
+					<li>4 Player</li>
+					<li>Settings</li>
+				</ul>
+			</div>
+			<div id="main" style="display: none;">
+				<canvas id="mainCanvas" width="500" height="500">
+					
+				</canvas>
+			</div>
+		</div>
+	</body>
+</html>
