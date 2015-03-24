@@ -48,7 +48,7 @@ html, body {
 }
 
 .stripes {
-	background: url("../assets/stripes2.png") repeat scroll 0% 0% transparent;
+	background: url("../assets/stripes.png") repeat scroll 0% 0% transparent;
 	position: absolute;
 	top: 50%;
 	left: 50%;
