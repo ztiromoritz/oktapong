@@ -48,6 +48,8 @@ html, body {
 }
 
 .stripes {
+	z-index: -1;
+	
 	background: url("../assets/stripes.png") repeat scroll 0% 0% transparent;
 	position: absolute;
 	top: 50%;

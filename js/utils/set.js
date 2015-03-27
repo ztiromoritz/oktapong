@@ -1,4 +1,4 @@
-/*
+/**
  * Minimal Set Implementation
  * ///http://stackoverflow.com/questions/7958292/mimicking-sets-in-javascript
  */

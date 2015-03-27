@@ -16,9 +16,7 @@
 	
 	var handleKeyDown = function(e){
 		var evt = e || window.event;
-		console.log('down' +e.keyCode );
 		state.keys.add(e.keyCode);	
-		console.log(state.keys.data);
 	};
 	
 	var handleKeyUp = function(e){
