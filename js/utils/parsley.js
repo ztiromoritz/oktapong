@@ -149,6 +149,11 @@ Vect.prototype.length = function() {
 	return Math.sqrt(this.lengthSq());
 };
 
+
+Vect.prototype.angle = function (){
+	return Math.atan2(this.y, this.x);
+};
+
 Vect.prototype.rotate = function(angle) {
 	var _x = (this.x * Math.cos(angle)) - (this.y * Math.sin(angle));
 	var _y = (this.x * Math.sin(angle)) + (this.y * Math.cos(angle));
@@ -157,6 +162,10 @@ Vect.prototype.rotate = function(angle) {
 	return this;
 };
 
+Vect.prototype.rotateTo = function(angle){
+	this.rotate(angle - this.angle());
+	return this;
+};
 
 
 Vect.prototype.reflectOn = function( u ){

@@ -31,12 +31,13 @@ jQuery(function(){
 	stage.addChild(wPaddle);
 	
 	var ball = new okta.Ball({x:250, y:250, obstacles: [
-		new Segment( new Vect(50, 150) , new Vect(150,50)),
-		new Segment( new Vect(350, 50) , new Vect(450, 150)),
-		new Segment( new Vect(450, 350), new Vect(350, 450)),
-		new Segment( new Vect(150, 450), new Vect(50, 350)),
-		nPaddle, ePaddle, sPaddle, wPaddle
-	]});
+			new Segment( new Vect(50, 150) , new Vect(150,50)),
+			new Segment( new Vect(350, 50) , new Vect(450, 150)),
+			new Segment( new Vect(450, 350), new Vect(350, 450)),
+			new Segment( new Vect(150, 450), new Vect(50, 350))],
+			paddles    : {north: nPaddle, east: ePaddle, south: sPaddle, west: wPaddle},
+			deathzones : {north: 50, east: 450, south: 450,  west: 50}
+		});
 	
 	stage.addChild(ball);
 

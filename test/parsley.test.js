@@ -392,3 +392,21 @@ describe('Segment#intersect', function(){
 });
 
 
+describe('fiddle', function(){
+	var v = new Vect(2,0);	
+	var w = new Vect(0,2);
+	it('cc', function(){
+		console.log(v.clone().rotate(Math.PI/2));
+		console.log(w.clone().rotate(Math.PI/2));
+		assert(true);
+		console.log(v.clone().rotateTo(Math.PI/2));
+		console.log(w.clone().rotateTo(Math.PI/2));
+		console.log(w.clone().rotateTo(45*Math.PI/180));
+		console.log(w.clone().rotateTo(Math.PI));
+	});
+	
+} );
+
+
+
+

@@ -7,3 +7,6 @@ Collision
 
 Reflection
  * https://asalga.wordpress.com/2012/09/23/understanding-vector-reflection-visually/
+
+Rotation:
+ * http://www.chemgapedia.de/vsengine/vlu/vsc/de/ma/1/mc/ma_11/ma_11_03/ma_11_03_02.vlu.html

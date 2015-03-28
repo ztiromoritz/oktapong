@@ -10,7 +10,7 @@
 		this.body = new createjs.Shape();
 		this.addChild(this.body);
 		
-		this.length   = options.length 	 || 40;
+		this.length   = options.length 	 || 45;
 		this.start    = options.start 	 || okta.NORTH.start;
 		this.stop     = options.stop 	 || okta.SOUTH.stop;
 		this.position =  0.5; 
@@ -18,42 +18,41 @@
 		this.rightKey = options.rightKey || 39;
 		this.color    = options.color    || "#5c8b00";
 		
-		this.goalLine  = new Segment(this.stop, this.start);
+		
+		
 		this.v  	   = this.stop.clone().sub(this.start);
 		this.v_n 	   = this.v.clone().normalize();
+		this.v_p       = this.v_n.clone().mul(this.length);
 		this.last_left = false;
 		this.last_right = false;
+		this.goalLine  = new Segment(this.stop, this.start);
+		this.from      = new Vect(this.x, this.y);
+		this.to 	   = new Vect(this.x, this.y).add(this.v_p);
 		
+					
 		this.initBody();
 	};
 	
 	var p = createjs.extend(Paddle, createjs.Container);
 	
-
-	p.updatePosition = function(){
-		
-		
+	p.updatePosition = function(){	
 		var range = this.v.length() - this.length;
-		var w = this.v_n.clone().mul(range * this.position);
-		
+		var w = this.v_n.clone().mul( range * this.position );
 		var p1 = this.start.clone().add( w );
 		
 		this.x = p1.x;
 		this.y = p1.y;
 	};
 	
-	
 	p.initBody = function(){
 		this.body.graphics
 		 	.beginStroke(this.color)
 		 	.setStrokeStyle(4)
 		    .moveTo(0,0)
-		    .lineTo(this.v_n.x * this.length, this.v_n.y * this.length);	
+		    .lineTo(this.v_p.x, this.v_p.y);	
 		this.updatePosition();
 	};
-	
-	
-	
+
 	p.tick = function(even, state){
 		var l = this.last_left;
 		var r = this.last_right;
@@ -78,14 +77,17 @@
 		this.updatePosition();
 	};
 	
-	p.getSegment = function(){
-		var s = new Segment(
-			new Vect(this.x, this.y),
-			new Vect(this.x, this.y).add(new Vect(this.v_n.x * this.length, this.v_n.y * this.length)) );
-		return s;
+	p.getFrom = function(){
+		this.from.x = this.x;
+		this.from.y = this.y;
+		return this.from;
 	};
 	
-	
+	p.getTo = function(){
+		this.to.x = this.x + this.v_p.x;
+		this.to.y = this.y + this.v_p.y; 
+		return this.to;
+	};
 	
 	
 	okta.Paddle = createjs.promote(Paddle, "Container");
