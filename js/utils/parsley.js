@@ -89,6 +89,16 @@ Vect.prototype.cross = function(v) {
 	return (this.x * v.y ) - (this.y * v.x );
 };
 
+Vect.prototype.distanceSq = function(v){
+        var dx = this.x - v.x;
+        var dy = this.y - v.y;
+        return dx * dx + dy * dy;
+};
+
+Vect.prototype.distance = function (v) {
+	return Math.sqrt(this.distanceSq(v));
+};
+
 Vect.prototype.isLeftOf = function(v){
 	if(X_IS_LEFT_TO_Y)
 		return this.cross(v) > 0;
@@ -244,6 +254,10 @@ Segment.prototype.toString = function() {
 
 Segment.fromArray = function(arr) {
 	return new Segment(new Vect(arr[0], arr[1]), new Vect(arr[2], arr[3]));
+};
+
+Segment.fromObject = function(obj){
+	return new Segment(obj.p1,obj.p2);
 };
 
 Segment.prototype.clone = function() {

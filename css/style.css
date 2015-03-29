@@ -31,8 +31,24 @@
 }
 
 html, body {
-	background-color: #333;
+	background-color: #000;
 	font-family: "Courier New", Courier, monospace
+	
+}
+
+.black {
+	overflow: hidden;
+	background-color: #000;
+	background: radial-gradient(ellipse farthest-corner at center center , #333 0%, #000 100%) repeat scroll 0% 0% transparent;
+	position: absolute;
+		width: 100%;
+	height: 100%;
+	
+}
+.black:after {
+	clear: both;
+    content: "";
+    display: block;
 }
 
 .container {
@@ -43,21 +59,88 @@ html, body {
 	height: 500px;
 	margin-top: -250px;
 	margin-left: -250px;
-	background-color: #000;
-	background: radial-gradient(ellipse farthest-corner at center center , #333 0%, #000 100%) repeat scroll 0% 0% transparent;
+	/*background-color: #000;*/
+	
 }
 
 .stripes {
-	z-index: -1;
-	
-	background: url("../assets/stripes.png") repeat scroll 0% 0% transparent;
+		
+	background: url("../assets/stripes.png") repeat scroll 0% 0% transparent;	
+	width: 100%;
+	height: 100%;
 	position: absolute;
+	/*
 	top: 50%;
 	left: 50%;
 	width: 500px;
 	height: 500px;
 	margin-top: -250px;
-	margin-left: -250px;
+	margin-left: -250px;*/
+}
+
+span.points {
+	font-family: Impact, Charcoal, sans-serif;
+	color: #fff;
+}
+
+span.label {
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 9px;
+}
+
+.points.north {
+	position: absolute;
+	top: 10px;
+	left: 270px;
+}
+
+.points.east {
+	position: absolute;
+	top: 270px;
+	left: 480px;
+}
+
+.points.south {
+	position: absolute;
+	top: 470px;
+	left: 230px;
+}
+
+.points.west {
+	position: absolute;
+	top: 225px;
+	left: 10px;
+}
+
+.label.north {
+	position: absolute;
+	top: 15px;
+	left: 230px;
+}
+
+.label.east {
+	position: absolute;
+	top: 250px;
+	left: 470px;
+}
+
+.label.south {
+	position: absolute;
+	top: 475px;
+	left: 250px;
+}
+
+.label.west {
+	position: absolute;
+	top: 205px;
+	left: 10px;
+}
+
+
+#mainCanvas {
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }
 
 span.okta {
@@ -76,7 +159,7 @@ span.okta {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 200px;
+	width: 250px;
 	height: 200px;
 	margin-top: -100px;
 	margin-left: -100px;
@@ -90,7 +173,9 @@ span.okta {
 }
 
 #menu li.selected {
-	 list-style-type: square;
+	 
+	 background-color: #9BD724;
+	 color: black;
 }
 
 #menu h1 {
@@ -98,4 +183,6 @@ span.okta {
 	font-size: 30px;
 	letter-spacing: 0.1em;
 }
+
+
 
