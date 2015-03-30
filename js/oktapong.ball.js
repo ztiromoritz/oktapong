@@ -121,7 +121,7 @@
 		
 		this.x = this.options.x;
 		this.y = this.options.y;
-		this.velicity = START_VELOCITY;
+		velocity = START_VELOCITY;
 		
 		
 		if(this.player === null){
@@ -154,7 +154,7 @@
 		//Direction	
 		move.rotateTo(phi);
 		this.direction.rotateTo(phi);
-		this.velicity += 0.5;
+		velocity += 0.5;
 	};
 		
 	b.initBody = function(){
