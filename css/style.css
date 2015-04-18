@@ -1,0 +1,188 @@
+.color-primary-0 { color: #6F209A }	/* Main Primary color */
+.color-primary-1 { color: #9C60BC }
+.color-primary-2 { color: #7F3BA4 }
+.color-primary-3 { color: #56107D }
+.color-primary-4 { color: #420563 }
+
+.color-secondary-1-0 { color: #B91F76 }	/* Main Secondary color (1) */
+.color-secondary-1-1 { color: #D768A7 }
+.color-secondary-1-2 { color: #C5408B }
+.color-secondary-1-3 { color: #970C5A }
+.color-secondary-1-4 { color: #770043 }
+
+.color-secondary-2-0 { color: #9BD724 }	/* Main Secondary color (2) */
+.color-secondary-2-1 { color: #C8F275 }
+.color-secondary-2-2 { color: #B2E64B }
+.color-secondary-2-3 { color: #79AF0D }
+.color-secondary-2-4 { color: #5C8B00 }
+
+.color-complement-0 { color: #E6E626 }	/* Main Complement color */
+.color-complement-1 { color: #FFFF7B }
+.color-complement-2 { color: #F6F650 }
+.color-complement-3 { color: #BCBC0E }
+.color-complement-4 { color: #949400 }
+
+
+
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	background-color: #000;
+	font-family: "Courier New", Courier, monospace
+	
+}
+
+.black {
+	overflow: hidden;
+	background-color: #000;
+	background: radial-gradient(ellipse farthest-corner at center center , #333 0%, #000 100%) repeat scroll 0% 0% transparent;
+	position: absolute;
+		width: 100%;
+	height: 100%;
+	
+}
+.black:after {
+	clear: both;
+    content: "";
+    display: block;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 500px;
+	margin-top: -250px;
+	margin-left: -250px;
+	/*background-color: #000;*/
+	
+}
+
+.stripes {
+		
+	background: url("../assets/stripes.png") repeat scroll 0% 0% transparent;	
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	/*
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 500px;
+	margin-top: -250px;
+	margin-left: -250px;*/
+}
+
+span.points {
+	font-family: Impact, Charcoal, sans-serif;
+	color: #fff;
+}
+
+span.label {
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 9px;
+}
+
+.points.north {
+	position: absolute;
+	top: 10px;
+	left: 270px;
+}
+
+.points.east {
+	position: absolute;
+	top: 270px;
+	left: 480px;
+}
+
+.points.south {
+	position: absolute;
+	top: 470px;
+	left: 230px;
+}
+
+.points.west {
+	position: absolute;
+	top: 225px;
+	left: 10px;
+}
+
+.label.north {
+	position: absolute;
+	top: 15px;
+	left: 230px;
+}
+
+.label.east {
+	position: absolute;
+	top: 250px;
+	left: 470px;
+}
+
+.label.south {
+	position: absolute;
+	top: 475px;
+	left: 250px;
+}
+
+.label.west {
+	position: absolute;
+	top: 205px;
+	left: 10px;
+}
+
+
+#mainCanvas {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+span.okta {
+	display:block;
+	float: left;	
+	background-image: url('../assets/Okta.png');
+	background-repeat: no-repeat;
+	background-size: 32px;
+	width: 32px;
+	height: 32px;
+	margin-right: 3px;
+}
+
+#menu {
+	color: #9BD724;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 250px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	
+}
+
+#menu ul {
+    list-style-type: none;
+    margin-left: 20px;
+	margin-top: 8px;
+}
+
+#menu li.selected {
+	 
+	 background-color: #9BD724;
+	 color: black;
+}
+
+#menu h1 {
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 30px;
+	letter-spacing: 0.1em;
+}
+
+
+
