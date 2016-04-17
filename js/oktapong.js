@@ -66,9 +66,9 @@ jQuery(function(){
 		
 		stage.addChild(ball);
 		
-				var ticker = createjs.Ticker;
+		var ticker = createjs.Ticker;
 	
-		ticker.setFPS(30);
+		ticker.setFPS(60);
 	
 		//ticker.addEventListener("tick", stage);
 		

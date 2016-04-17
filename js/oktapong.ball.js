@@ -1,6 +1,6 @@
 (function(okta){
 	
-	var START_VELOCITY = 6.5;
+	var START_VELOCITY = 6.5 / 2;
 	
 	var velocity = START_VELOCITY;
 			
@@ -28,7 +28,8 @@
 	var b = createjs.extend(Ball, createjs.Container);
 	
 	b.tick = function(event, state){
-		var move = this.direction.clone().mul(velocity);	
+		var V = velocity * event.delta/20; 
+		var move = this.direction.clone().mul(V);	
 		var before = new Vect(this.x, this.y);
 		var after  = before.clone().add(move);
 		var segment = new Segment( before , after );
@@ -83,7 +84,7 @@
 		}
 		
 		// Deathzone
-		var DEATH = 10;
+		var DEATH = 30;
 		if(after.x > this.deathzones.east + DEATH ){
 			this.out('east',state);
 			return;

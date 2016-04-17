@@ -1,7 +1,7 @@
 (function(okta){
 	
-	var velocity = 0.05;
-	var kiVelocity = 0.031;//0.025;//
+	var velocity = 0.04 / 2;
+	var kiVelocity = 0.031 /2;//0.025;//
 	
 	var NOOP = 0;
 	var UP = 1;
@@ -73,22 +73,23 @@
 	};
 	
 	p.tickHuman = function(event, state){
+		var V = velocity * event.delta/20;  
 		var l = this.last_left;
 		var r = this.last_right;
 		if(state.keys.contains(this.leftKey)){
-			this.position = Math.max(0, this.position - velocity);
+			this.position = Math.max(0, this.position - V);
 			this.last_left = true;
 		}else if(l){
-			this.position = Math.max(0, this.position - velocity * 0.5);
+			this.position = Math.max(0, this.position - V * 0.5);
 			this.last_left = false;
 		}else{
 			this.last_left = false;
 		}
 		if(state.keys.contains(this.rightKey)){
-			this.position = Math.min(1,this.position + velocity);
+			this.position = Math.min(1,this.position + V);
 			this.last_right = true;
 		}else if(r){
-			this.position = Math.min(1,this.position + velocity * 0.5);
+			this.position = Math.min(1,this.position + V * 0.5);
 			this.last_right = false;
 		}else{
 			this.last_right = false;
@@ -98,12 +99,14 @@
 	p.tickKI = function(event, state){
 		that = this;
 		
+		var V = kiVelocity * event.delta/20; 
+		
 		var up = function(){
-			that.position = Math.min(1, that.position + kiVelocity);
+			that.position = Math.min(1, that.position + V);
 		};
 		
 		var down = function(){
-			that.position = Math.max(0, that.position - kiVelocity);
+			that.position = Math.max(0, that.position - V);
 		};
 
 
